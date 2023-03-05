@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cats</h1>
+    <img src="./assets/cat1.jpg" id="cat" alt="image_cat">
+    </br>
+    <button id="Previous" onclick="previous()">Previous</button>
+    <button id="Next" onclick="next()">Next</button>
+
+
+
+
+
+    <script>
+        //Задание №1, вывод в консоль
+        let winner = () => console.log('Я учу Java Script!');
+        winner();
+
+        //Задание №2, галерея с котиками
+        function next() {
+            let image = document.getElementById('cat');
+            let result = String(image.src);
+            console.log(result);
+
+            if (result === 'http://127.0.0.1:5500/New%20JS/JSWeek2/assets/cat1.jpg') {
+                image.src = './assets/cat2.png';
+            } else {
+                image.src = './assets/cat3.jpg'
+            };
+
+        };
+
+        function previous() {
+            let image = document.getElementById('cat');
+
+            let result = String(image.src);
+
+            if (result === 'http://127.0.0.1:5500/New%20JS/JSWeek2/assets/cat3.jpg') {
+                image.src = './assets/cat2.png';
+            } else {
+                image.src = './assets/cat1.jpg'
+            };
+        };
+    </script>
+</body>
+
+</html>
